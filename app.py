@@ -1,18 +1,33 @@
-from flask import Flask, render_template, redirect, url_for, request
+import os
+import json
+from sqlalchemy import *
+from sqlalchemy.pool import NullPool
+from flask import Flask, request, render_template, g, redirect, Response, url_for, flash
+from flask_caching import Cache
+import logging
+from flask import request
 
 app = Flask(__name__)
 
-# @app.route('/')
-# def home():
-#     name = "Personal Budgeting"
-#     return render_template("index.html", name=name)
+dashboard_data_grocery = {
+    'Title':'Grocery',
+    'Budget': 250,
+    'Remaining': 120
+}
+
+dashboard_data_dining = {
+    'Title':'Dining',
+    'Budget': 400,
+    'Remaining': 50
+}
+
 
 @app.route('/')
 def home():
     name = "Personal Budgeting"
     return render_template("home.html", name=name)
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     error = None
     if request.method == 'POST':
@@ -21,5 +36,9 @@ def login():
         else:
             return redirect(url_for('home'))
     return render_template('login.html', error=error)
+
+@app.route('/display_dashboard', methods=['GET'])
+def display_dashboard():
+    return render_template('dashboard.html', dashboard_data_grocery=dashboard_data_grocery, dashboard_data_dining=dashboard_data_dining)
 
 app.run(port=5000, debug=True)
