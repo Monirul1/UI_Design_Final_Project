@@ -1,0 +1,50 @@
+.body{
+    background-color: rgb(219, 255, 239);
+}
+
+.block{
+    display: inline-block;
+}
+
+.title{
+    font-family: 'Sacramento'; 
+    font-size: 80px;
+}
+
+.subtitle{
+    text-decoration: underline;
+}
+
+.canvas{
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.table{
+    margin: 0 auto;
+}
+
+.slot{
+    padding: 40px;
+    text-align: center;
+}
+
+.image{
+    height: 200px;
+    object-fit: contain;
+}
+
+.btn{
+    padding: 20px 60px; 
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: rgb(188, 241, 253);
+    cursor: pointer;
+    border-width: 0px;
+    color: rgba(8, 134, 89, 1);
+    font-size: large;
+}
