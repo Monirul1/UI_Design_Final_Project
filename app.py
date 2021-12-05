@@ -9,19 +9,6 @@ from flask import request
 
 app = Flask(__name__)
 
-dashboard_data_grocery = {
-    'Title':'Grocery',
-    'Budget': 250,
-    'Remaining': 120
-}
-
-dashboard_data_dining = {
-    'Title':'Dining',
-    'Budget': 400,
-    'Remaining': 50
-}
-
-
 @app.route('/')
 def home():
     name = "Personal Budgeting"
@@ -39,6 +26,6 @@ def login():
 
 @app.route('/display_dashboard', methods=['GET'])
 def display_dashboard():
-    return render_template('dashboard.html', dashboard_data_grocery=dashboard_data_grocery, dashboard_data_dining=dashboard_data_dining)
+    return render_template('dashboard.html')
 
 app.run(port=5000, debug=True)
