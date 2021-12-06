@@ -69,5 +69,6 @@ def account_details():
 def manual_expense():
     return render_template("manual_expense.html")
 
+    return render_template('dashboard.html')
 
 app.run(port=5000, debug=True)

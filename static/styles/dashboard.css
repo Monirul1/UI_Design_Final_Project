@@ -17,3 +17,24 @@
     text-align: center;
     background-color: transparent;
 }
+
+
+.block {
+	display: inline-block;
+}
+
+.nav li {
+	display: inline-block;
+	font-size: 20px;
+	padding: 5px;
+}
+
+.title{
+    font-family: 'Sacramento'; 
+    font-size: 80px;
+}
+
+.chart{
+    width: 600; 
+    height: 400;
+}
