@@ -4,7 +4,12 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/dashboard.css') }}">
+
       <style>
+         /* .table_chart{
+            text-align: left;
+         } */
          .block{
          display: inline-block;
          }
@@ -12,7 +17,32 @@
          display: inline-block;
          font-size: 20px;
          padding: 5px;
+         }
+         td {
+            padding-left: 200px;
          }   
+         .button-text{
+            position: absolute;
+            width: 160px;
+            height: 60px;
+            top: 607px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+
+            color: #088659;
+         }
+         .button-style{
+               position: absolute;
+               width: 212px;
+               height: 69px;
+               top: 604px;
+               background: #BCF1FD;
+         }
       </style>
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script type="text/javascript">
@@ -44,7 +74,7 @@
              chart.draw(data, options);
          
          
-             // draw2
+             // chart2
              var data = new google.visualization.arrayToDataTable([
               {% for k, v in dashboard_data_dining.items() %}
                  {% if v is string %}
@@ -65,14 +95,122 @@
          
              var chart = new google.visualization.PieChart(document.getElementById('piechart_dining'));
              chart.draw(data, options);
+
+
+            //  chart 3
+
+            var data = new google.visualization.arrayToDataTable([
+              {% for k, v in dashboard_data_utility.items() %}
+                 {% if v is string %}
+                   ['{{ k }}', '{{ v }}'],
+                 {% else %}
+                   ['{{ k }}', {{ v }}],
+                 {% endif %}
+              {% endfor %}
+           ]);
+         
+             var options = {
+                 legend: 'none',
+                 pieSliceText: 'label',
+                 title: '    {{ dashboard_data_utility.Title }}: Budget ${{ dashboard_data_utility.Budget }}, Remaining ${{ dashboard_data_utility.Remaining }}',
+                 pieStartAngle: 100,
+                 backgroundColor: 'mediumaquamarine',
+             };
+         
+             var chart = new google.visualization.PieChart(document.getElementById('piechart_utility'));
+             chart.draw(data, options);
          
          
          }
       </script>
    </head>
    <body style="background-color: mediumaquamarine;">
+
+
+      <div class="canvas">
+
+
+
+
+         <div style="margin-top: 80px; text-align: center;">
+            <h1 style="font-family: 'Sacramento', cursive; font-size: 80px;">Personal Finance Tracker</h1>
+         </div>
+
+         <table class="table_chart" >
+            <tr>
+               <td style="padding: 5px;">
+                  <div id="piechart_grocery" style="width: 600; height: 400; background-color: mediumaquamarine;"></div>
+               </td>
+               <td style="padding: 5px;">
+                  <div id="piechart_dining"  style="width: 600; height: 400; background-color: mediumaquamarine;"></div>
+               </td>
+               <td style="padding: 5px;">
+                  <div id="piechart_utility"  style="width: 600; height: 400; background-color: mediumaquamarine;"></div>
+               </td>
+
+
+            </tr>
+         </table>
+
+         <!-- <ul class="nav">
+            
+            <li>
+               <div id="piechart_grocery" style="width: 600; height: 400; background-color: mediumaquamarine;"></div>
+            </li>
+            <li>
+               <div id="piechart_dining"  style="width: 600; height: 400; background-color: mediumaquamarine;"></div>
+            </li>
+         </ul> -->
+
+
+
+
+
+
+
+
+
+
+
+
+         <div>
+            <table class="table" style="margin-left: 80px;">
+                
+               <tr style="margin-left: 40px;"> 
+                 <td class = "">
+                  <a class="button-style">
+                     <a href="/manage_budget" class="button-text">Manage Budget</a>
+                  </a>
+                   </td>
+                 <td class = "">
+                  <a class="button-style">
+                     <a href="/transactions" class="button-text">View <br> Transactions</a>
+                  </a>
+                  </td>
+                 <td class = "">
+                  <a class="button-style">
+                     <a href="/account_details" class="button-text">Account <br> Details</a>
+                  </a>
+                   </td>
+                   <td class = "">
+                     <a class="button-style">
+                        <a href="/manual_expense" class="button-text">Manually <br> Enter Expenses</a>
+                     </a>
+                  </td>
+               </tr>
+              
+           </table>
+
+         </div>
+       
+  
+
+
+
+      </div>
+
       <!-- title -->
-      <div style="margin-top: 80px; text-align: center;">
+      <!-- <div style="margin-top: 80px; text-align: center;">
          <h1 style="font-family: 'Sacramento', cursive; font-size: 80px;">Personal Finance Tracker</h1>
       </div>
       <ul class="nav">
@@ -82,8 +220,9 @@
          <li>
             <div id="piechart_dining"  style="width: 600; height: 400; background-color: mediumaquamarine;"></div>
          </li>
-
       </ul>
- 
+      <br> -->
+
+   
    </body>
 </html>

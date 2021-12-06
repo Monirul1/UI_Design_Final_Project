@@ -1,0 +1,19 @@
+.table{
+    /* margin: 0 auto; */
+}
+.body{
+    background-color: rgb(219, 255, 239);
+}
+
+.slot{
+    padding: 12px;
+    text-align: center;
+}
+
+.canvas{
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+    background-color: transparent;
+}

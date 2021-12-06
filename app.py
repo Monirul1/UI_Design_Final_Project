@@ -21,6 +21,18 @@ dashboard_data_dining = {
     'Remaining': 50
 }
 
+dashboard_data_utility = {
+    'Title':'Utility',
+    'Budget': 200,
+    'Remaining': 50
+}
+
+ashboard_data_transportation = {
+    'Title':'Transportation',
+    'Budget': 150,
+    'Remaining': 80
+}
+
 
 @app.route('/')
 def home():
@@ -39,6 +51,23 @@ def login():
 
 @app.route('/display_dashboard', methods=['GET'])
 def display_dashboard():
-    return render_template('dashboard.html', dashboard_data_grocery=dashboard_data_grocery, dashboard_data_dining=dashboard_data_dining)
+    return render_template('dashboard.html', dashboard_data_grocery=dashboard_data_grocery, dashboard_data_dining=dashboard_data_dining, dashboard_data_utility=dashboard_data_utility)
+
+@app.route('/manage_budget')
+def manage_budget():
+    return render_template("manage_budget.html")
+
+@app.route('/transactions')
+def transactions():
+    return render_template("transactions.html")
+
+@app.route('/account_details')
+def account_details():
+    return render_template("account_details.html")
+
+@app.route('/manual_expense')
+def manual_expense():
+    return render_template("manual_expense.html")
+
 
 app.run(port=5000, debug=True)
