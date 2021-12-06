@@ -10,27 +10,27 @@ from flask import request
 app = Flask(__name__)
 
 dashboard_data_grocery = {
-    'Title':'Grocery',
-    'Budget': 250,
-    'Remaining': 120
+    'title':'Grocery',
+    'budget': 250,
+    'remaining': 120
 }
 
 dashboard_data_dining = {
-    'Title':'Dining',
-    'Budget': 400,
-    'Remaining': 50
+    'title':'Dining',
+    'budget': 400,
+    'remaining': 50
 }
 
 dashboard_data_utility = {
-    'Title':'Utility',
-    'Budget': 200,
-    'Remaining': 50
+    'title':'Utility',
+    'budget': 200,
+    'remaining': 50
 }
 
-ashboard_data_transportation = {
-    'Title':'Transportation',
-    'Budget': 150,
-    'Remaining': 80
+dashboard_data_transportation = {
+    'title':'Transportation',
+    'budget': 150,
+    'remaining': 80
 }
 
 

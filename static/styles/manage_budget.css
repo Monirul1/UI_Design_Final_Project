@@ -1,0 +1,24 @@
+.body{
+    background-color: rgb(219, 255, 239);
+}
+
+.block{
+    display: inline-block;
+}
+
+.title{
+    font-family: 'Sacramento'; 
+    font-size: 80px;
+}
+
+.subtitle{
+    text-decoration: underline;
+}
+
+.canvas{
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+    background-color: transparent;
+}
