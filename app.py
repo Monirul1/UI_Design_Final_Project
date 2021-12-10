@@ -9,9 +9,33 @@ from flask import request
 
 app = Flask(__name__)
 
+user_data = [
+{
+    "title":"SJHBFHSJBFJHSFS",
+    "budget": 250,
+    "remaining": 120
+},
+{
+     "title":'Dining',
+    "budget": 400,
+    "remaining": 50
+},
+{
+     "title":'Utility',
+    "budget": 200,
+    "remaining": 50
+},
+{
+     "title":'Transportation',
+    "budget": 150,
+    'remaining': 80
+}
+
+]
+
 dashboard_data_grocery = {
     'title':'Grocery',
-    'budget': 250,
+    'budget': 300,
     'remaining': 120
 }
 
@@ -51,7 +75,7 @@ def login():
 
 @app.route('/display_dashboard', methods=['GET'])
 def display_dashboard():
-    return render_template('dashboard.html', dashboard_data_grocery=dashboard_data_grocery, dashboard_data_dining=dashboard_data_dining, dashboard_data_utility=dashboard_data_utility)
+    return render_template('dashboard.html', user_data=user_data, dashboard_data_grocery=dashboard_data_grocery, dashboard_data_dining=dashboard_data_dining, dashboard_data_utility=dashboard_data_utility)
 
 @app.route('/manage_budget')
 def manage_budget():
