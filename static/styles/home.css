@@ -38,13 +38,15 @@
 }
 
 .btn{
-    padding: 20px 60px; 
+    padding: 8px 60px; 
     text-align: center;
-    margin-left: 50px;
-    margin-right: 50px;
-    background-color: rgb(188, 241, 253);
+    margin: 15px;
     cursor: pointer;
     border-width: 0px;
-    color: rgba(8, 134, 89, 1);
+    background: #088659;
+    border-radius: 50px;  
     font-size: large;
+    color: white;
+    font-size: 15px;
+    box-shadow: 2px 2px 8px #3db48bc2;    
 }
