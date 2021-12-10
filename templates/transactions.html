@@ -1,147 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">                
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/transactions.css') }}">
-    <style>
-        .body{
-            background-color: rgb(219, 255, 239);
-        }
-
-        .block{
-            display: inline-block;
-        }
-
-        .title{
-            font-family: 'Sacramento'; 
-            font-size: 80px;
-        }
-
-        .subtitle{
-            text-decoration: underline;
-        }
-
-        .canvas{
-            width: auto;
-            height: auto;
-            margin-top: 20px;
-            /* text-align: center; */
-            background-color: transparent;
-        }
-        .title{
-            text-align: center;
-        }
-        .content{
-            margin-left: 30px;
-        }
-
-        #rcorners1 {
-            border-radius: 25px;
-            padding: 20px; 
-            height: 26%;  
-            background: white;
-            margin: auto;
-            width: 86%;
-        }
-        #rcorners2 {
-            border-top-right-radius: 25px;
-            border-top-left-radius: 25px;
-            padding: 20px; 
-            height: 36%;  
-            background: white;
-            margin: auto;
-            width: 86%;
-        }
-        /* .content-corners{
-            border-top-right-radius: 25px;
-            border-top-left-radius: 25px;
-            background: white;
-            width: 86%;
-            height: 36%;  
-            margin-left: 72px;
-
-        } */
-        /* #center{
-            margin: auto;
-            width: 50%;
-        } */
-        .element{
-            display: inline-block;
-        }
-        .total-budget{
-            font-family: Cairo;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 26px;
-
-            color: #000000;
-        }
-
-        #leftbox {
-                float:left; 
-                width:20%;
-            }
-            #middlebox{
-                float:left; 
-                width:75%;
-            }
-
-            .btn {
-            background-color: #5BCFC5;
-            border: none;
-            color: white;
-            padding: 12px 16px;
-            font-size: 16px;
-            cursor: pointer;
-            }
-       
-
-    </style>
 </head>
 
 <body class="body">
 
     <div class = "canvas">
         
-        <!-- title -->
-        <div>
-             <div id = "leftbox">
-                <a class="btn" href="/display_dashboard"><i class="fa fa-home">Home</i></a>
-            </div> 
-              
-            <div id = "middlebox" style="margin-right: 16px;">
-                <p class="title" style="margin-right: 100px;"> Personal Finance Tracker</p>
-            </div>
-        </div>
-        <br>
-
         <div class="content"> 
             <h1 style="text-decoration: underline; ">View Transactions:</h1>
         </div>
 
-        <div id="rcorners1">
-
-            <!-- <div id = "leftbox">
-                <h2>Learn:</h2>
-                It is a good platform to learn programming.
-                It is an educational website. Prepare for
-                the Recruitment drive  of product based 
-                companies like Microsoft, Amazon, Adobe 
-                etc with a free online placement preparation 
-                course.
-            </div> 
-              
-            <div id = "middlebox">
-                <h2>GeeksforGeeks:</h2>
-                The course focuses on various MCQ's & Coding 
-                question likely to be asked in the interviews
-                & make your upcoming placement season efficient
-                and successful.
-            </div> -->
-
+        <div class="cornerCanvas">
             <table>
                 <tr>
                     <td>
@@ -149,18 +22,18 @@
 
                     </td>
                     <td>
-                        <div style="margin-bottom: 30px; margin-left: 20px;">
+                        <div class="profile">
                             <h2>Total Budget Balance:</h2>
                             <h3>$500</h3>
-                            <h4 style="color: red;">-0.8% than last week</h4>
-                            <div class="progress" style="height: 20px;">
+                            <h4 class="red">-0.8% than last week</h4>
+                            <div class="progress">
                                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <p><span>$0</span> <span style="margin-left: 500px;">$5,000</span></p>
                         </div>
                     </td>
                     <td>
-                        <div style="margin-left: 400px;">
+                        <div class="asOf">
                             <p>Valid Until</p>
                             <p>1/1/2022</p>
                         </div>
@@ -172,10 +45,10 @@
 
         <br>
 
-        <div id="rcorners2">
+        <div class="cornerCanvas" style="margin-top: 25px;">
 
             <table class="table">
-                <div style="margin-top: 20px;"></div>
+                <div style="margin-top: 10px;"></div>
                 <thead>
                   <tr>
                     <th>  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> </th>
@@ -183,9 +56,8 @@
                     <th scope="col">Date</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Type</th>
-                    <th scope="col"><button style="background-color:#5bcfc5; 
-                        width: 100px;
-                        ">Insights</button></th>
+                    <th scope="col">
+                        <button class="btn" style="background-color: #5BCFC5;">Insights</button></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -256,4 +128,7 @@
 
     </div>
 </body>
-</html>
+
+{% endblock %}
+
+

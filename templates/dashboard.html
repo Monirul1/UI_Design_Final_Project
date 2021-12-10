@@ -1,212 +1,34 @@
-<html>
-   <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/transactions.css') }}">
+{% extends 'base.html' %}
 
-      <style>
-         /* .table_chart{
-            text-align: left;
-         } */
-         .block{
-         display: inline-block;
-         }
-         .nav li {
-         display: inline-block;
-         font-size: 20px;
-         padding: 5px;
-         }
-         td {
-            padding-left: 200px;
-         }   
-         .button-text{
-            position: absolute;
-            width: 160px;
-            height: 60px;
-            top: 607px;
+{% block content %}
+<head>
+   <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/dashboard.css') }}">
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript" src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</head>
 
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 24px;
-            line-height: 28px;
-            text-align: center;
+<body class="body">
 
-            color: #088659;
-         }
-         .button-style{
-               position: absolute;
-               width: 212px;
-               height: 69px;
-               top: 604px;
-               background: #BCF1FD;
-         }
-      </style>
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <script type="text/javascript">
-         google.charts.load("current", {packages:["corechart"]});
-         google.charts.setOnLoadCallback(drawChart);
-         
-         function drawChart() {
-         
-             // chart1
-             var data = new google.visualization.arrayToDataTable([
-              {% for k, v in dashboard_data_grocery.items() %}
-                 {% if v is string %}
-                   ['{{ k }}', '{{ v }}'],
-                 {% else %}
-                   ['{{ k }}', {{ v }}],
-                 {% endif %}
-              {% endfor %}
-           ]);
-         
-             var options = {
-                 legend: 'none',
-                 pieSliceText: 'label',
-                 title: '    {{ dashboard_data_grocery.title }}: Budget ${{ dashboard_data_grocery.budget }}, Remaining ${{ dashboard_data_grocery.remaining }}',
-                 pieStartAngle: 100,
-             };
-         
-             var chart = new google.visualization.PieChart(document.getElementById('piechart_grocery'));
-             chart.draw(data, options);
-         
-         
-             // chart2
-             var data = new google.visualization.arrayToDataTable([
-              {% for k, v in dashboard_data_dining.items() %}
-                 {% if v is string %}
-                   ['{{ k }}', '{{ v }}'],
-                 {% else %}
-                   ['{{ k }}', {{ v }}],
-                 {% endif %}
-              {% endfor %}
-           ]);
-         
-             var options = {
-                 legend: 'none',
-                 pieSliceText: 'label',
-                 title: '    {{ dashboard_data_dining.title }}: Budget ${{ dashboard_data_dining.budget }}, Remaining ${{ dashboard_data_dining.remaining }}',
-                 pieStartAngle: 100,
-             };
-         
-             var chart = new google.visualization.PieChart(document.getElementById('piechart_dining'));
-             chart.draw(data, options);
-
-
-            //  chart 3
-
-            var data = new google.visualization.arrayToDataTable([
-              {% for k, v in dashboard_data_utility.items() %}
-                 {% if v is string %}
-                   ['{{ k }}', '{{ v }}'],
-                 {% else %}
-                   ['{{ k }}', {{ v }}],
-                 {% endif %}
-              {% endfor %}
-           ]);
-         
-             var options = {
-                 legend: 'none',
-                 pieSliceText: 'label',
-                 title: '    {{ dashboard_data_utility.title }}: Budget ${{ dashboard_data_utility.budget }}, Remaining ${{ dashboard_data_utility.remaining }}',
-                 pieStartAngle: 100,
-                 backgroundColor: 'transparent',
-             };
-         
-             var chart = new google.visualization.PieChart(document.getElementById('piechart_utility'));
-             chart.draw(data, options);
-         
-         
-         }
-      </script>
-   </head>
-   <body class="body">
-
-
-      <div class="canvas">
-
-
-
-
-         <div style="margin-top: 80px; text-align: center;">
-            <h1 style="font-family: 'Sacramento', cursive; font-size: 80px;">Personal Finance Tracker</h1>
-         </div>
-
-         <table class="table_chart" >
-            <tr>
-               <td style="padding: 5px;">
-                  <div id="piechart_grocery" style="width: 600; height: 400;  background-color: rgb(219, 255, 239);"></div>
-               </td>
-               <td style="padding: 5px;">
-                  <div id="piechart_dining"  style="width: 600; height: 400;  background-color: rgb(219, 255, 239);"></div>
-               </td>
-               <td style="padding: 5px;">
-                  <div id="piechart_utility"  style="width: 600; height: 400;  "></div>
-               </td>
-
-            </tr>
-         </table>
-
-         <div>
-            <table class="table" style="margin-left: 80px;">
-                
-               <tr style="margin-left: 40px;"> 
-                 <td class = "">
-                  <a class="button-style">
-                     <a href="/manage_budget" class="button-text">Manage Budget</a>
-                  </a>
-                   </td>
-                 <td class = "">
-                  <a class="button-style">
-                     <a href="/transactions" class="button-text">View <br> Transactions</a>
-                  </a>
-                  </td>
-                 <td class = "">
-                  <a class="button-style">
-                     <a href="/account_details" class="button-text">Account <br> Details</a>
-                  </a>
-                   </td>
-                   <td class = "">
-                     <a class="button-style">
-                        <a href="/manual_expense" class="button-text">Manually <br> Enter Expenses</a>
-                     </a>
-                  </td>
-               </tr>
-              
-           </table>
-
-         </div>
-       
-  
-
-
-
-      </div>
-
-      <!-- title -->
-      <!-- <div style="margin-top: 80px; text-align: center;">
-         <h1 style="font-family: 'Sacramento', cursive; font-size: 80px;">Personal Finance Tracker</h1>
-      </div>
-      <ul class="nav">
-         <li>
-            <div id="piechart_grocery" style="width: 600; height: 400; background-color: mediumaquamarine;"></div>
-         </li>
-         <li>
-            <div id="piechart_dining"  style="width: 600; height: 400; background-color: mediumaquamarine;"></div>
-         </li>
-      </ul>
-      <br> -->
-
-   
-      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+   <div class="canvas">
       
-      <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/dashboard.css') }}">
+      <div class="content"> 
+         <h1 style="text-decoration: underline; ">Dashboard:</h1>
+      </div>
 
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <script type="text/javascript" src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
-   </body>
- 
-   
-</html>
+      <table class="table borderless">
+         <tr>
+            <td>
+               <div class="chart" id="piechart_grocery"></div>
+            </td>
+            <td>
+               <div class="chart" id="piechart_dining"></div>
+            </td>
+            <td>
+               <div class="chart" id="piechart_utility"></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</body>
+
+{% endblock %}

@@ -11,11 +11,18 @@ let dashboard_data_dining = [
     ['Remaining', 50],
 ]
 
+let dashboard_data_utility = [
+    ['Used', 150],
+    ['Remaining', 50],
+]
+
 function drawChart() {
 	// chart1
     charHelper('Grocery', dashboard_data_grocery, 'piechart_grocery')
 	// draw2
     charHelper('Dining', dashboard_data_dining, 'piechart_dining')
+	// draw3
+    charHelper('Utility', dashboard_data_utility, 'piechart_utility')
 }
 
 function charHelper(title, raw_data, chart_id) {
@@ -30,7 +37,7 @@ function charHelper(title, raw_data, chart_id) {
 		legend: 'none',
 		pieSliceText: 'label',
 		title:
-			`${title}: Budget ${total}, Remaining ${ raw_data[1][1] }`,
+			`${title}: Budget $${total}, Remaining $${ raw_data[1][1] }`,
 		pieStartAngle: 100,
         backgroundColor: 'transparent',
 	};

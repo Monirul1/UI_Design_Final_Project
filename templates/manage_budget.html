@@ -1,24 +1,26 @@
-<html>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">                
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<header class="page-header">
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/manage_budget.css') }}">
+</header>
+
+<body class="body">
+    <div class = "canvas">
         
-        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/manage_budget.css') }}">
-    </head>
-
-    <body class="body">
-
-        <div class = "canvas">
-            
-            <!-- title -->
-            <div>
-                <h1 class="title">Personal Finance Tracker</h1>
-            </div>
-
-          
-      
+        <div class="content"> 
+            <h1 style="text-decoration: underline; ">Manage Budget</h1>
         </div>
-    </body>
-</html>
+
+        <div>Total Budget Set For Nov 2021: $1,150</div>
+        
+        </div>
+    
+        <div class ="center">
+            <img class = "image" src="{{url_for('static', filename='images/invoiceTable.png')}}">
+        </div>
+    </div>
+</body>
+    
+{% endblock %}

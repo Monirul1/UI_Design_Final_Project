@@ -11,14 +11,39 @@
     font-size: 80px;
 }
 
-.subtitle{
-    text-decoration: underline;
-}
-
 .canvas{
     width: auto;
     height: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     background-color: transparent;
+}
+
+.table{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.slot{
+    width: 350px;
+    padding: 10px;
+    text-align: center;
+}
+
+.image{
+    height: 450px;
+    object-fit: contain;
+}
+
+.center{
+    text-align: center;
+}
+
+#leftBox {
+    float:left; 
+    width:20%;
+}
+
+.borderless td, .borderless th {
+    border: none;
 }
