@@ -1,22 +1,50 @@
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="static/bootstrap.min.css" rel="stylesheet" media="screen"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <!-- <link href="static/bootstrap.min.css" rel="stylesheet" media="screen"> -->              
+        
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/login.css') }}">
   </head>
-  <body>
-    <div class="container">
-      <h1>Please login</h1>
-      <br>
-      <form action="/display_dashboard" method="GET">
-        <input type="text" placeholder="Username" name="username" value="{{
-          request.form.username }}">
-         <input type="password" placeholder="Password" name="password" value="{{
-          request.form.password }}">
-        <input class="btn btn-default" type="submit" value="Login">
-      </form>
-      {% if error %}
-        <p class="error"><strong>Error:</strong> {{ error }}
-      {% endif %}
-    </div>
-  </body>
+
+  <body class="body">
+
+      <div class = "canvas">
+            
+          <!-- title -->
+          <div>
+              <h1 class="title">Personal Finance Tracker</h1>
+          </div>
+
+          <table class="table">
+                
+              <tr>
+                <td class = "slot">
+                    <h2>SIGN IN</h2>
+                    <form action="/display_dashboard" method="GET">
+                      <div class="input-label">Username</div>
+                      <input type="text" placeholder="Username" name="username" value="{{
+                        request.form.username }}">
+                      <br>
+                      <div  class="input-label">Password</div>
+                      <input type="password" placeholder="Password" name="password" value="{{
+                        request.form.password }}">
+                      <br>
+                      <div class="forget"> Forget Your Password? </div>
+                      <input class="btn btn-default" type="submit" value="SIGN IN">
+                    </form>
+                </td>
+                <td class="vertical-bar"></td>
+                <td class = "slot">
+                  <h2>DON'T HAVE AN ACCOUNT?</h2>
+                  <p>Create account to use our <br> convenient site features</p>
+                  <input class="btn btn-default" type="submit" value="CREATE AN ACCOUNT">
+                </td>
+              </tr>
+            </table>
+      
+        </div>
+    </body>
+
 </html>
