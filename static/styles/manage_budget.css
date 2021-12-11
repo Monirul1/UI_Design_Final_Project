@@ -1,49 +1,48 @@
-.body{
-    background-color: rgb(219, 255, 239);
+.table{
+    margin: auto;
+    width: auto;
+    border: grey;
+    border-width: 1px;
+    padding-bottom: 20px;
 }
 
-.block{
-    display: inline-block;
+
+.chart-title{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color:rgba(0, 0, 0, 0.1);
+    padding: 10px;
 }
 
-.title{
-    font-family: 'Sacramento'; 
-    font-size: 80px;
+.chart-button{
+    font-size: 15px; 
+    font-weight: bold; 
+    color:darkcyan; 
+
+}
+
+.chart-button:hover{
+    color:tomato;
+    cursor: pointer;
 }
 
 .canvas{
+    width: 40%;;
+    margin: auto;
+    text-align: center;
+}
+
+.chart-container{
+    text-align: center;
+}
+
+
+.cornerCanvas {
+    border-radius: 25px;
+    height: auto;  
+    background: whitesmoke;
+    margin: 10px;
     width: auto;
-    height: auto;
-    margin-top: 10px;
+    box-shadow: 2px 2px 8px #3db48bc2;
     text-align: center;
-    background-color: transparent;
-}
-
-.table{
-    margin: 0 auto;
-    width: 50%;
-}
-
-.slot{
-    width: 350px;
-    padding: 10px;
-    text-align: center;
-}
-
-.image{
-    height: 450px;
-    object-fit: contain;
-}
-
-.center{
-    text-align: center;
-}
-
-#leftBox {
-    float:left; 
-    width:20%;
-}
-
-.borderless td, .borderless th {
-    border: none;
 }

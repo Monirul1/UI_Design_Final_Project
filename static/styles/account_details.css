@@ -9,11 +9,13 @@
 
 .cornerCanvas {
     border-radius: 25px;
-    padding: 20px; 
     height: auto;  
-    background: white;
+    background: whitesmoke;
     margin: 10px;
     width: auto;
+    box-shadow: 2px 2px 8px #3db48bc2;
+    text-align: center;
+    padding: 10px;
 }
 
 .profile{

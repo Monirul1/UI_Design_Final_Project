@@ -1,12 +1,34 @@
-.body{
-    background-color: rgb(219, 255, 239);
-    text-align: center;
+.chart-title{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color:rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.chart-button{
+    font-size: 15px; 
+    font-weight: bold; 
+    color:darkcyan; 
+
+}
+
+.chart-button:hover{
+    color:tomato;
+    cursor: pointer;
 }
 
 .canvas{
+    width: 86%;
+    margin: auto;
+}
+
+.cornerCanvas {
+    border-radius: 25px;
+    height: auto;  
+    background: whitesmoke;
+    margin: 10px;
     width: auto;
-    height: auto;
-    margin-top: 10px;
+    box-shadow: 2px 2px 8px #3db48bc2;
     text-align: center;
-    background-color: transparent;
+    padding: 10px;
 }

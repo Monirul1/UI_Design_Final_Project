@@ -4,7 +4,7 @@
 }
 
 .canvas{
-    width: auto;
+    width: 100%;
     height: auto;
     margin-top: 20px;
     text-align: center;
@@ -12,24 +12,34 @@
 }
 
 
-.block {
-	display: inline-block;
-}
-
-.nav li {
-	display: inline-block;
-	font-size: 20px;
-	padding: 5px;
-}
-
-.title{
-    font-family: 'Sacramento'; 
-    font-size: 80px;
-}
-
 .chart{
-    width: 400; 
-    height: 300;
+    width: 400px; 
+    height: auto;
+    /* margin: -20px; */
     background-color: rgb(219, 255, 239);
 }
 
+.table{
+    width: 100%;
+}
+
+.container {
+    height: 300px;
+    width: auto;
+    display:flex;
+}
+
+.table{
+    margin: auto;
+    width: auto;
+}
+
+.cornerCanvas {
+    border-radius: 25px;
+    height: auto;  
+    background: whitesmoke;
+    margin: 10px;
+    width: auto;
+    box-shadow: 2px 2px 8px #3db48bc2;
+    text-align: center;
+}
