@@ -40,6 +40,10 @@
     box-shadow: 2px 2px 8px #3db48bc2;    
 }
 
+.btn:hover{
+    background: #3f3cf1d0;
+}
+
 .logout{
     background-color: #e67e22;
 }
@@ -48,7 +52,7 @@ a:link {
     text-decoration: none;
 }
 a:hover {
-    color: black;
+    color: white;
     text-decoration: underline;
 }
 

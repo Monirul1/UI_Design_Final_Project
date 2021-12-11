@@ -18,6 +18,38 @@
     padding: 10px;
 }
 
+.btn-content{
+    padding: 8px 40px; 
+    text-align: center;
+    margin: 15px;
+    cursor: pointer;
+    border-width: 0px;
+    background: #479e97;
+    border-radius: 50px;  
+    font-size: large;
+    color: white;
+    font-size: 15px;
+    box-shadow: 2px 2px 8px #3db48bc2;    
+}
+
+.btn-content:hover{
+    background: #3f3cf1d0;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+.btn-box{
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .profile{
     margin-left: 20px;
 }
