@@ -1,0 +1,61 @@
+/* .canvas{
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    text-align: center;
+    background-color: transparent;
+} */
+
+a{
+    font-size: 20px;
+}
+
+.page-title{
+    text-align: left;
+    padding-left: 200px;
+}
+
+.parent-link{
+    color: #3db48bc2;
+}
+
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.table{
+    width: 80%;
+}
+
+.cornerCanvas {
+    border-radius: 25px;
+    padding: 20px; 
+    height: auto;  
+    background: white;
+    margin: 10px;
+    width: auto;
+    box-shadow: 2px 2px 8px #3db48bc2;
+    text-align: center;
+}
+
+.grow img{
+    transition: 1s ease;
+}
+    
+.grow img:hover{
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+    transition: 1s ease;
+}
+
+.diagram-title{
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -89,6 +89,10 @@ def transactions():
 def account_details():
     return render_template("account_details.html")
 
+@app.route('/account_insights')
+def account_insights():
+    return render_template("account_insights.html")
+
 @app.route('/manual_expense')
 def manual_expense():
     return render_template("manual_expense.html")

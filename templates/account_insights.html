@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+   <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/account_insights.css') }}">
+</head>
+
+<body class="body">
+
+   <div class="canvas">
+      
+      <div class="page-title"> 
+        <a class="parent-link" href="/transactions">Transaction</a>
+        <a> > Account Insights</a>
+      </div>
+
+      <table class="table borderless">
+         <tr>
+            <td>
+                <div class="grow">
+                    <div class="cornerCanvas">
+                        <p class="diagram-title">Transaction Insights</p>
+                        <img class = "image" src="{{url_for('static', filename='images/accountInsights.png')}}">
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="grow">
+                    <div class="cornerCanvas">
+                        <p class="diagram-title">Spending</p>
+                        <img class = "image" src="{{url_for('static', filename='images/spendings.png')}}">
+                    </div>
+                </div>
+                <!-- <img class = "image" src="{{url_for('static', filename='images/spendings.png')}}"> -->
+            </td>
+         </tr>
+      </table>
+   </div>
+</body>
+
+{% endblock %}

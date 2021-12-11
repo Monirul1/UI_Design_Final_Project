@@ -16,6 +16,11 @@ let dashboard_data_utility = [
     ['Remaining', 50],
 ]
 
+let dashboard_data_transportation = [
+    ['Used', 150],
+    ['Remaining', 80],
+]
+
 function drawChart() {
 	// chart1
     charHelper('Grocery', dashboard_data_grocery, 'piechart_grocery')
@@ -23,6 +28,8 @@ function drawChart() {
     charHelper('Dining', dashboard_data_dining, 'piechart_dining')
 	// draw3
     charHelper('Utility', dashboard_data_utility, 'piechart_utility')
+	// draw4
+    charHelper('Transportation', dashboard_data_transportation, 'piechart_transportation')
 }
 
 function charHelper(title, raw_data, chart_id) {
