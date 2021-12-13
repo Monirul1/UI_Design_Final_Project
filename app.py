@@ -97,6 +97,8 @@ def account_insights():
 def manual_expense():
     return render_template("manual_expense.html")
 
-    return render_template('dashboard.html')
+@app.route('/signup')
+def signup():
+    return render_template("signup.html")
 
 app.run(port=5000, debug=True)

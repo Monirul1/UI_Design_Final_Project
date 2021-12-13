@@ -21,7 +21,7 @@
                 
               <tr>
                 <td class = "slot">
-                    <h2>SIGN IN</h2>
+                    <h2>LOG IN</h2>
                     <form action="/display_dashboard" method="GET">
                       <div class="input-label">Username</div>
                       <input type="text" placeholder="Username" name="username" value="{{
@@ -32,14 +32,14 @@
                         request.form.password }}">
                       <br>
                       <div class="forget"> Forget Your Password? </div>
-                      <input class="btn btn-default" type="submit" value="SIGN IN">
+                      <a href="/display_dashboard" class="btn">LOG IN</a>
                     </form>
                 </td>
                 <td class="vertical-bar"></td>
                 <td class = "slot">
                   <h2>DON'T HAVE AN ACCOUNT?</h2>
                   <p>Create account to use our <br> convenient site features</p>
-                  <input class="btn btn-default" type="submit" value="CREATE AN ACCOUNT">
+                  <a href="/signup" class="btn">SIGN UP</a>
                 </td>
               </tr>
             </table>

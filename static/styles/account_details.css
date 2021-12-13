@@ -28,20 +28,22 @@
     border-radius: 50px;  
     font-size: large;
     color: white;
-    font-size: 15px;
-    box-shadow: 2px 2px 8px #3db48bc2;    
+    box-shadow: 2px 2px 8px #3db48bc2;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .btn-content:hover{
     background: #3f3cf1d0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 a:link {
-    text-decoration: none;
 }
 
 a:hover {
-    color: white;
 }
 
 .btn-box{

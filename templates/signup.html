@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <!-- <link href="static/bootstrap.min.css" rel="stylesheet" media="screen"> -->              
+        
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/signup.css') }}">
+  </head>
+
+  <body class="body">
+
+      <div class = "canvas">
+            
+          <!-- title -->
+          <div>
+              <h1 class="title">Personal Finance Tracker</h1>
+          </div>
+
+          <div>
+            <h2>SIGN UP</h2>
+            <div class="input-label">Username</div>
+            <input type="text" placeholder="Username" name="username">
+            <br>
+            <div  class="input-label">Password</div>
+            <input type="password" placeholder="Password" name="password">
+            <br>
+            <div  class="input-label">Re-enter Password</div>
+            <input type="password" placeholder="Password" name="password">
+            <br>
+            <div class="input-label">
+              <a href="/login" class="login"> Already have the account </a>
+            </div>
+            <br>
+            <a href="/display_dashboard" class="btn">SIGN UP</a>
+          </div>
+
+        </div>
+  </body>
+
+</html>

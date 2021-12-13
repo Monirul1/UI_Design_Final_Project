@@ -49,40 +49,35 @@
 .btn{
     padding: 8px 40px; 
     text-align: center;
-    margin: 20px;
+    margin: 15px;
     cursor: pointer;
     border-width: 0px;
     background: #08865ad0;
     border-radius: 50px;  
     font-size: large;
     color: white;
-    box-shadow: 2px 2px 8px #3db48bc2;
+    box-shadow: 2px 2px 8px #3db48bc2;    
+    text-decoration: none;
 }
 
 .btn:hover{
     background: #3f3cf1d0;
 }
 
-a:link {
-    text-decoration: none;
-}
-
-a:hover {
-    color: white;
-}
-
 h2{
     text-shadow: 2px 2px 8px #3db48bc2;
 }
 
-.forget{
-    padding-top: 20px;
-    padding-bottom: 20px;
+.login{
+    margin: 20px;
     text-decoration: underline;
     cursor: pointer;
+    color:black;
 }
 
-.forget:hover {
+.login:hover {
     cursor: pointer;
+    text-decoration: underline;
     font-weight: bold;
+    color:black;
 }
