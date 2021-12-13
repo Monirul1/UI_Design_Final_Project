@@ -81,3 +81,9 @@ h2{
     font-weight: bold;
     color:black;
 }
+
+.input-box{
+    width: 300px;
+    height: 30px;
+    border: 0;
+}
